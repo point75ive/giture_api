@@ -1,0 +1,23 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+{% include "user/user-nav.html" %}
+<div class="container is-flex is-align-items-center is-justify-content-center" style="height: 100vh;">
+  <!-- is-flex, is-align-items-center, and is-justify-content-center ensure the container is centered -->
+  <div class="box has-text-centered">
+    <h2 class="title is-4">Confirmation Page</h2>
+    <div class="card" style="width: 18rem;">
+      <div class="card-content">
+        <div class="notification is-success">{{transaction.status}}</div>
+        <h5 class="title is-5">Payment Summary</h5>
+        <p class="content">Order Total: Ksh {{transaction.amount}}</p>
+        <p class="content">Customer Phone: {{transaction.phone-no}}</p>
+        <p class="content">Mpesa Ref: {{transaction.mpesa-ref}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

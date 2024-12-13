@@ -1,0 +1,49 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+{% include "user/user-nav.html" %}
+
+<h1 class="title is-3">Your Order</h1>
+
+<table id="checkout-cart" class="table shopping-cart">
+    <thead>
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<div id="pricing">
+    <p id="shipping">
+        <strong>Shipping</strong>: <span id="sshipping"></span>
+    </p>
+
+    <p id="sub-total">
+        <strong>Total</strong>: <span id="stotal"></span>
+    </p>
+</div>
+
+<div id="user-details">
+    <h2 class="title is-4">Your Data</h2>
+    <div id="user-details-content"></div>
+</div>
+
+<form id="paypal-form" action="" method="post">
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="upload" value="1" />
+    <input type="hidden" name="business" value="" />
+
+    <input type="hidden" name="currency_code" value="" />
+    <div class="field">
+        <div class="control">
+            <button class="button is-primary btn" type="submit" id="paypal-btn">Pay with PayPal</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

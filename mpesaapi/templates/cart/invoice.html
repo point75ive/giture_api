@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+{% include "user/user-nav.html" %}
+
+<div class="container is-flex is-align-items-center is-justify-content-center" style="height: 100vh;">
+  <!-- is-flex, is-align-items-center, and is-justify-content-center ensure the container is centered -->
+  <div class="box has-text-centered">
+    <h2 class="title is-4">Invoice Page</h2>
+    <div class="card" style="width: 18rem;">
+      <div class="card-content">
+        <div class="notification is-warning">{{transaction.status}}</div>
+        <h5 class="title is-5">Invoice Summary</h5>
+        <p class="content">Order Total: Ksh {{transaction.amount}}</p>
+        <p class="content">Customer Phone: {{transaction.phone-no}}</p>
+        <p class="content">Transaction Ref: {{transaction.merchant-req-id}}</p>
+        <form action="/invoice" method="POST">
+          <div class="field">
+            <label for="mpesa-ref" class="label">MPESA Reference</label>
+            <div class="control">
+              <input type="text" class="input is-small" id="mpesa-ref" name="mpesa-ref">
+            </div>
+          </div>
+          <button type="submit" class="button is-success">Confirm Payment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

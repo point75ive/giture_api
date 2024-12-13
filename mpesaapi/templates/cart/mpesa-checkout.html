@@ -1,0 +1,38 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+{% include "user/user-nav.html" %}
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="box has-text-centered">
+                        <h2 class="title">Checkout Page</h2>
+                        <form action="/mpesa-checkout" method="POST">
+                            <div class="field">
+                                <label class="label" for="phone_no">Phone No</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="phone-no" name="phone-no">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="amount">Amount</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="amount" name="amount">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-success" type="submit">MPESA</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
